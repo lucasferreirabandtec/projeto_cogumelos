@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calculadora Financeira</h2>
+   Quanto você fatura por mês com fungos: <input id="faturamento"><br>
+   <button onclick = "calcular()">Calcular ganhos</button>
+
+   <div id = "mensagem" style="display: none; margin-top: 30px">
+
+    Sem a Revolution Mushroon você fatura <u>R$ <span id ="velho_total"></span></u> por ano. <br>
+    Com a Revolution Mushroon você faturará <b>R$ <span id="novo_total"></span></b> por ano!
+</div>
+ <div id = "mensalidade" style ="display: none; margin-top: 30px">
+
+    A sua mensalidade será de <b>R$ <span  id = "mensal"></span> </b>
+
+
+ </div>
+</body>
+</html>
+
+<script>
+function calcular(){
+var fatura = faturamento.value;
+var velha_fatura= fatura * 12;
+var nova_fatura = (fatura * 1.4) * 12;
+var mensalidade1 = (nova_fatura/12) * 0.15;
+
+mensagem.style.display = 'block';
+mensalidade.style.display = 'block';
+novo_total.innerHTML = nova_fatura.toFixed(2);
+velho_total.innerHTML = velha_fatura.toFixed(2);
+mensal.innerHTML = mensalidade1.toFixed(2);
+}
+
+</script>
+
+
